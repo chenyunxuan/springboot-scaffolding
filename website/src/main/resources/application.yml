@@ -1,0 +1,8 @@
+
+server:
+  port: 8081
+logging:
+  config: classpath:config/logback-dev.xml
+management:
+  security:
+    enabled: false
