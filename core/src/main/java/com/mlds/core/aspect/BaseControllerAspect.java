@@ -57,8 +57,6 @@ public class BaseControllerAspect extends BaseServerAspect{
         //用改变后的参数执行目标方法
         Object returnValue = point.proceed();
         logger.info("此处可做一些类似after的工作+"+returnValue.toString());
-        logger.info("----doAround()结束----");
-
         return returnValue;
     }
 
