@@ -1,10 +1,10 @@
 package com.mlds.controller;
 
-import com.mlds.server.TestDe;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * @version 1.0
@@ -13,13 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class TestDemo {
-
-    @RequestMapping(value = "hello/{a}", method = RequestMethod.GET)
-    public String  hello(@PathVariable Integer a) throws Exception {
-        TestDe de=null;
-        if(a==1){
-            de=new TestDe();
-        }
-        return null;
+    @RequestMapping(value = "hello", method = RequestMethod.GET)
+    public Object  hello(HttpSession session) throws Exception {
+        Object o=session.getAttribute("uid");
+        return o;
     }
 }
